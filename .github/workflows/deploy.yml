@@ -9,12 +9,12 @@ env:
   MONGODB_DB_NAME: Cluster0
 jobs:
   test:
+    environment: testing
     env:
-      MONGODB_PASSWORD: TSnD8kfYzyEkdAJN
-      MONGODB_USERNAME: user
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_CLUSTER_ADDRESS: cluster0.zlxwwoa.mongodb.net
       PORT: 8080
-    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
